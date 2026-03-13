@@ -58,3 +58,17 @@ f) Custom Pipes implement the Pipe Transform interface.
 
 ==> In myname folder we implement the custom pipe implementation and in common/pipes/uppercase  have the method of custom pipe that make the  name in uppercase.
 
+14) =======>>>>>>>How to Protect Routes using Guards 
+
+a) It means restricting  access to specific  API routes.
+b) Only authorized users (like logged-in users or admins) can access them.
+
+        ======Guards
+c) Guards are classes that implement logic to decide whether a request is allowed or not.
+d) Thay implement the CanActivate interface and run before the route handler.
+e) Mostly used for authentication or  authorization.
+        ===== Why we used Guards
+f) Top secure private routes.
+g) To avoid duplicating checks in every controller.
+h) To build role-based access control systems. 
+
