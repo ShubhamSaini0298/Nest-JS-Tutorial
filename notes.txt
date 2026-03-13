@@ -72,3 +72,9 @@ f) Top secure private routes.
 g) To avoid duplicating checks in every controller.
 h) To build role-based access control systems. 
 
+15)  ========> Role based  authorization
+    By using guards we make this protect the routes and by using guard we make protect and role based acces the user as it is have admin and user
+
+    
+
+
