@@ -1,0 +1,13 @@
+Date : 11/03/2026    Wednesday
+#) Folder Structure
+Inside the nestjs folder structure there are many files and folder in which src folder have our working folder in which have so many files 
+1) app.controller.spec.ts   
+   This is for testing purpose file 
+2) app.controller.ts 
+    This file is based on controller working that take request and give response via controller.
+3) app.module.ts 
+    This is out root module file that are attached with all services.
+4) app.service.ts 
+    This file in which we write the our business logic and controller also call this file app.service.ts to take request and give repsponse as according to request
+5) main.ts 
+    This is the entry file of our nest js app
