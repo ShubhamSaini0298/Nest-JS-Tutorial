@@ -30,3 +30,15 @@ c) Used for both request(DTOs) and response objects.
 
 In which the customer folder is make for DTO implementation
 
+
+Now we learn and implement the validation/ validator on dto because on compile time it compile but on run time it not 
+i.e., /* eslint-disable prettier/prettier */
+ export class CreateCustomerDto{
+    name: string;
+    age: number;
+ }
+
+ on run time if we add a another key it processed not give any error beacuse of this we use some explicitly validator/ validation
+
+ Now we install the package , class-validator and class-transformer 
+ we use this package in DTo of customer for some decorator and also used globally inside the main.ts file 
