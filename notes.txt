@@ -1,13 +1,32 @@
-Date : 11/03/2026    Wednesday
+======================[Date : 11/03/2026    Wednesday]=========================
 #) Folder Structure
 Inside the nestjs folder structure there are many files and folder in which src folder have our working folder in which have so many files 
-1) app.controller.spec.ts   
+a) app.controller.spec.ts   
    This is for testing purpose file 
-2) app.controller.ts 
+b) app.controller.ts 
     This file is based on controller working that take request and give response via controller.
-3) app.module.ts 
+c) app.module.ts 
     This is out root module file that are attached with all services.
-4) app.service.ts 
+d) app.service.ts 
     This file in which we write the our business logic and controller also call this file app.service.ts to take request and give repsponse as according to request
-5) main.ts 
+e) main.ts 
     This is the entry file of our nest js app
+
+========================[Date : 12/03/2026   Thursday]===============================
+a) Today we complete the CRUD Operation in it without databse operation and also perform the API Method in it.
+GET, POST, PUT, PATCH, DELETE
+
+========================[Date : 13/03/2026    Friday]==============================
+{#} DTO (Data Transfer Object)
+
+a) An object that carries data between layers (like from client to backend).
+b) Used to define the shape of incoming request data.
+c) Ensures only required data is passed (security + validation).
+
+{#} Interface
+a) Interfaces define the structure (type) of an object.
+b) Help write clean, structured, type-safe code.
+c) Used for both request(DTOs) and response objects.
+
+In which the customer folder is make for DTO implementation
+
