@@ -1,3 +1,5 @@
+The TechZeen 
+
 ======================[Date : 11/03/2026    Wednesday]=========================
 #) Folder Structure
 Inside the nestjs folder structure there are many files and folder in which src folder have our working folder in which have so many files 
@@ -16,7 +18,7 @@ e) main.ts
 a) Today we complete the CRUD Operation in it without databse operation and also perform the API Method in it.
 GET, POST, PUT, PATCH, DELETE
 
-========================[Date : 13/03/2026    Friday]==============================
+11) ========================[Date : 13/03/2026    Friday]==============================
 {#} DTO (Data Transfer Object)
 
 a) An object that carries data between layers (like from client to backend).
@@ -30,6 +32,7 @@ c) Used for both request(DTOs) and response objects.
 
 In which the customer folder is make for DTO implementation
 
+12)=====>>>>>>>>>> CLASS VALIDATOR, CLASS transformer
 
 Now we learn and implement the validation/ validator on dto because on compile time it compile but on run time it not 
 i.e., /* eslint-disable prettier/prettier */
@@ -42,3 +45,16 @@ i.e., /* eslint-disable prettier/prettier */
 
  Now we install the package , class-validator and class-transformer 
  we use this package in DTo of customer for some decorator and also used globally inside the main.ts file 
+
+13)=========>>>>>>>>> Custom Pipes
+
+a) Pipes are used to transform or validate incoming data.
+b) Nest js allows you to create your own Custom Pipes.
+c) They can be used for custom validation, data transformation, or business logic filtering.
+        ------important-----
+d) A Pipe runs before the data hits the route handler (controller method).
+e) You can apply pipes at method level, controller level, or globally.
+f) Custom Pipes implement the Pipe Transform interface.
+
+==> In myname folder we implement the custom pipe implementation and in common/pipes/uppercase  have the method of custom pipe that make the  name in uppercase.
+
