@@ -88,6 +88,8 @@ h) To build role-based access control systems.
 15)  ========> Role based  authorization
     By using guards we make this protect the routes and by using guard we make protect and role based acces the user as it is have admin and user
 
+                Date : 16/03/2026   Monday
+
 16)   =========> Exception Filters in Nest js 
 Command -> nest g filter filters/http-exception
 Folder -> exception, filters
@@ -102,6 +104,23 @@ now make a controller  ExceptionController
 nest g controller exception
 
 
+17)  =======> Middleware 
+a) Middleware runs before the request reaches the controller.
+
+            Middleware - UseCases
+b) Logging incoming requests
+c) Authentication tokens (e.g., checking JWT )
+d) Request transformation (e.g., converting strings  to numbers)
+e) Blocking or redirecting requests
+f) Setting headers.
+
+        Middleware v/s Guard  ---. important
+Command ->  nest g middleware middleware/logger
+
+Guard -> a) Before route is accessed (based on auth)
+         b) Authorization (role check., access allowed?)
+Middleware - > a) Before controller
+               b) Common tasks (logging, token decode)
 
 
 
