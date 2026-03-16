@@ -122,5 +122,28 @@ Guard -> a) Before route is accessed (based on auth)
 Middleware - > a) Before controller
                b) Common tasks (logging, token decode)
 
+18)  =======> LifeCycle Events
+
+Hooks is also Lifecycle Events 
+Special methods is also Lifecycle Events
+LifeCycle Method is alo LifeCycle Events
+
+a) Special methods/hooks provided by NestJS.
+b) Automatically called at different stages of a module/service/component's life.
+c) Used to perform actions during creation or destruction.
+
+            Why are they useful?
+a) Helps run some code when app/module/service is initialized.
+b) Helps run cleanup code  when  app/module/service is destroyed.
+c) Useful for tasks like DB connections, logging, resource cleanup, etc.,
+
+            When are they triggered?
+a) onModuleInit()            --> Called when the module is initialized.
+b) onModuleDestroy()         --> Called before the module is destroyed.
+c) afterModuleInit()         --> Called after all modules are initialized (optional).
+d) onApplication Bootstrap() --> When app is fully bootstrapped.
+e) onApplicationShutdown()   --> Called when app is shuting down.  
+
+
 
 
