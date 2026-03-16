@@ -1,6 +1,8 @@
 The TechZeen 
 
 ======================[Date : 11/03/2026    Wednesday]=========================
+install nest ->  npm i -g @nestjs/client
+create project in nestjs - nest new projectname
 #) Folder Structure
 Inside the nestjs folder structure there are many files and folder in which src folder have our working folder in which have so many files 
 a) app.controller.spec.ts   
@@ -15,10 +17,14 @@ e) main.ts
     This is the entry file of our nest js app
 
 ========================[Date : 12/03/2026   Thursday]===============================
+Create controller - nest g controller controllerName (student)
+Create Module     - nest g module moduleName (student)
+Create Service    - nest g service serviceName (student)
 a) Today we complete the CRUD Operation in it without databse operation and also perform the API Method in it.
 GET, POST, PUT, PATCH, DELETE
 
 11) ========================[Date : 13/03/2026    Friday]==============================
+it create manually not by command
 {#} DTO (Data Transfer Object)
 
 a) An object that carries data between layers (like from client to backend).
@@ -26,6 +32,7 @@ b) Used to define the shape of incoming request data.
 c) Ensures only required data is passed (security + validation).
 
 {#} Interface
+it create manually  not by command
 a) Interfaces define the structure (type) of an object.
 b) Help write clean, structured, type-safe code.
 c) Used for both request(DTOs) and response objects.
@@ -33,6 +40,9 @@ c) Used for both request(DTOs) and response objects.
 In which the customer folder is make for DTO implementation
 
 12)=====>>>>>>>>>> CLASS VALIDATOR, CLASS transformer
+
+this is bby default make pipe that use in globally our code in main.ts file check it 
+app.useGlobalPipe that term is belong here 
 
 Now we learn and implement the validation/ validator on dto because on compile time it compile but on run time it not 
 i.e., /* eslint-disable prettier/prettier */
@@ -47,6 +57,7 @@ i.e., /* eslint-disable prettier/prettier */
  we use this package in DTo of customer for some decorator and also used globally inside the main.ts file 
 
 13)=========>>>>>>>>> Custom Pipes
+create custom pipe   nest g pipe common/pipes/uppercase
 
 a) Pipes are used to transform or validate incoming data.
 b) Nest js allows you to create your own Custom Pipes.
@@ -64,6 +75,8 @@ a) It means restricting  access to specific  API routes.
 b) Only authorized users (like logged-in users or admins) can access them.
 
         ======Guards
+command  ---   nest g guards guards/auth
+
 c) Guards are classes that implement logic to decide whether a request is allowed or not.
 d) Thay implement the CanActivate interface and run before the route handler.
 e) Mostly used for authentication or  authorization.
@@ -75,6 +88,20 @@ h) To build role-based access control systems.
 15)  ========> Role based  authorization
     By using guards we make this protect the routes and by using guard we make protect and role based acces the user as it is have admin and user
 
-    
+16)   =========> Exception Filters in Nest js 
+Command -> nest g filter filters/http-exception
+Folder -> exception, filters
+
+a) Handle errors and exception in a centralized way.
+b) Help in managing app-wide error handling logic cleanly and consistently.
+      ------ Where we use this Filters
+c) Filters can be applied at method-level, controller-level, or globally (in main.ts).
+d) @Catch() decorators  is used  to define  which exception  the filter  will handle.
+
+now make a controller  ExceptionController
+nest g controller exception
+
+
+
 
 
