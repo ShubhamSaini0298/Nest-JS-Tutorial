@@ -149,6 +149,12 @@ e) onApplicationShutdown()   --> Called when app is shuting down.
 command -> nest g service database, nest g controller database
 
             =======>  Date : 18/03/2026 ========
+20) Environment Variables 
+
+a) Environment variables are used to store values that change depending  on the  environment (development, production, testing), like database
+    URL's, API keys, secrets etc.,
+         npm i @nestjs/config
+        app.module.ts ====>  imports: [EmployeeModule, CategoryModule, StudentModule, CustomerModule, ConfigModule.forRoot({ isGlobal: true })],
 
         
 
