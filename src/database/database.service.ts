@@ -6,7 +6,7 @@ export class DatabaseService {
 
   onModuleInit() {
     this.isConnected = true;
-    console.log('Database connected');
+    console.log('Database connected onModuleInit');
   }
 
   onApplicationShutdown(signal: string) {

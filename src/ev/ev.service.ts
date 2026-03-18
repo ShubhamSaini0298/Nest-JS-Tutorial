@@ -6,6 +6,6 @@ export class EvService {
     constructor(private configureService: ConfigService){}
 
     getDBURL(){
-        return this.configureService.get<string>('DATABASE_URL');
+        return this.configureService.get<string>('MONGO_URL');
         }
 }

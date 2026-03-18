@@ -156,6 +156,20 @@ a) Environment variables are used to store values that change depending  on the 
          npm i @nestjs/config
         app.module.ts ====>  imports: [EmployeeModule, CategoryModule, StudentModule, CustomerModule, ConfigModule.forRoot({ isGlobal: true })],
 
+21)   MongoDB
+
+a) NoSQL means "Not Only SQL".
+b) It stores data in flexible formats (like JSON).
+c) It doesnot required tables or fixed schema.
+d) Used for fast and scalable applications.
+
+22) Connect MongoDB with Nest js
+   succesflly connect mongoDb connection 
+   ev --> ev.service, ev.controller   
+   npm i @nestjs/config,  npm i @nestjs/mongoose
+   app.module.ts
+
+
         
 
 
