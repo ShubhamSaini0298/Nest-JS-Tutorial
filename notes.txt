@@ -142,7 +142,16 @@ a) onModuleInit()            --> Called when the module is initialized.
 b) onModuleDestroy()         --> Called before the module is destroyed.
 c) afterModuleInit()         --> Called after all modules are initialized (optional).
 d) onApplication Bootstrap() --> When app is fully bootstrapped.
-e) onApplicationShutdown()   --> Called when app is shuting down.  
+e) onApplicationShutdown()   --> Called when app is shuting down.
+
+            =======> Date: 17/03/2026 =========   database
+19) LifeCycle Hooks with pracrical implementation. (onModuleInit and onAppShutdown)  
+command -> nest g service database, nest g controller database
+
+            =======>  Date : 18/03/2026 ========
+
+        
+
 
 
 
