@@ -23,10 +23,11 @@ import { StudentMongoModule } from './student-mongo/student-mongo.module';
 import { UserMongoRelationshipModule } from './user-mongo-relationship/user-mongo-relationship.module';
 import { EmployeeMongoRelationshipOnetooneRefrencingModule } from './employee-mongo-relationship-onetoone-refrencing/employee-mongo-relationship-onetoone-refrencing.module';
 import { ProductMongoRelationshipOneToManyEmbeddingModule } from './product-mongo-relationship-one-to-many-embedding/product-mongo-relationship-one-to-many-embedding.module';
+import { LibraryMongoRelationshipOneToManyRefrencingModule } from './library-mongo-relationship-one-to-many-refrencing/library-mongo-relationship-one-to-many-refrencing.module';
 
 
 @Module({
-  imports: [EmployeeModule, CategoryModule, StudentModule, CustomerModule, ConfigModule.forRoot({ isGlobal: true }),MongooseModule.forRoot(process.env.MONGO_URL!), StudentMongoModule, UserMongoRelationshipModule, EmployeeMongoRelationshipOnetooneRefrencingModule, ProductMongoRelationshipOneToManyEmbeddingModule],
+  imports: [EmployeeModule, CategoryModule, StudentModule, CustomerModule, ConfigModule.forRoot({ isGlobal: true }),MongooseModule.forRoot(process.env.MONGO_URL!), StudentMongoModule, UserMongoRelationshipModule, EmployeeMongoRelationshipOnetooneRefrencingModule, ProductMongoRelationshipOneToManyEmbeddingModule, LibraryMongoRelationshipOneToManyRefrencingModule],
   controllers: [AppController, UserController, ProductController, MynameController, UserRolesController, ExceptionController, DatabaseController, EvController],
   providers: [AppService, ProductService, DatabaseService, EvService],
 })
