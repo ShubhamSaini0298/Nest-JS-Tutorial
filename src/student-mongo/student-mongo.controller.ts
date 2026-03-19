@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Get, Param, Patch, Post, Put } from '@nestjs/common';
 import { StudentMongoService } from './student-mongo.service';
 import { Student } from './student.schema';
 
@@ -24,5 +24,10 @@ export class StudentMongoController {
   @Put(':id')
   async updateStudent(@Param('id') id: string, @Body() data: Partial<Student>) {
     return this.studentMongoService.updateStudent(id, data);
+  }
+
+  @Patch(':id')
+  async patchStudent(@Param('id') id: string, @Body() data: Partial<Student>) {
+    return this.studentMongoService.pathStudent(id, data);
   }
 }

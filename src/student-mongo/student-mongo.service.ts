@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
 import { Student, StudentDocument } from './student.schema';
 import { Model } from 'mongoose';
@@ -27,6 +28,20 @@ export class StudentMongoService {
     id: string,
     data: Partial<Student>,
   ): Promise<Student | null> {
+    // return this.studentModel.findByIdAndUpdate(id, data, { new: true }).exec();
+    const updated = await this.studentModel.findByIdAndUpdate(
+      id,
+      {
+        name: data.name ?? null,
+        age: data.age ?? null,
+        email: data.email ?? null,
+      },
+      { overwrite: true, new: true },
+    );
+    return updated;
+  }
+
+  async pathStudent( id: string, data: Partial<Student> ): Promise<Student | null> {
     return this.studentModel.findByIdAndUpdate(id, data, { new: true }).exec();
   }
 }
