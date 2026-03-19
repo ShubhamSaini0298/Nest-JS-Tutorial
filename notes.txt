@@ -210,6 +210,7 @@ b)For make Relation ship in mongoDb we have two technique
         Slightly slower reads.
 
 30) One-to-One Relationship using Embedding   ====> user-mongo-Relationship
+31) One-to-One relationship using Refrencing  ====  employee-mongo-relationship-onetoone-refrencing
         
 
 

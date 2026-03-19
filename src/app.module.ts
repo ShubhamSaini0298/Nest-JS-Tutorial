@@ -21,10 +21,11 @@ import { EvController } from './ev/ev.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { StudentMongoModule } from './student-mongo/student-mongo.module';
 import { UserMongoRelationshipModule } from './user-mongo-relationship/user-mongo-relationship.module';
+import { EmployeeMongoRelationshipOnetooneRefrencingModule } from './employee-mongo-relationship-onetoone-refrencing/employee-mongo-relationship-onetoone-refrencing.module';
 
 
 @Module({
-  imports: [EmployeeModule, CategoryModule, StudentModule, CustomerModule, ConfigModule.forRoot({ isGlobal: true }),MongooseModule.forRoot(process.env.MONGO_URL!), StudentMongoModule, UserMongoRelationshipModule],
+  imports: [EmployeeModule, CategoryModule, StudentModule, CustomerModule, ConfigModule.forRoot({ isGlobal: true }),MongooseModule.forRoot(process.env.MONGO_URL!), StudentMongoModule, UserMongoRelationshipModule, EmployeeMongoRelationshipOnetooneRefrencingModule],
   controllers: [AppController, UserController, ProductController, MynameController, UserRolesController, ExceptionController, DatabaseController, EvController],
   providers: [AppService, ProductService, DatabaseService, EvService],
 })
