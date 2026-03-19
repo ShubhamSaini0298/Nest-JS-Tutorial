@@ -5,11 +5,15 @@ import { StudentMongoService } from './student-mongo.service';
 import { StudentMongoController } from './student-mongo.controller';
 
 @Module({
-    imports: [MongooseModule.forFeature([{
+  imports: [
+    MongooseModule.forFeature([
+      {
         name: Student.name,
-        schema: StudentSchema
-    }])],
-    providers: [StudentMongoService],
-    controllers: [StudentMongoController],
+        schema: StudentSchema,
+      },
+    ]),
+  ],
+  providers: [StudentMongoService],
+  controllers: [StudentMongoController],
 })
 export class StudentMongoModule {}

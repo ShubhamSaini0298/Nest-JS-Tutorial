@@ -178,6 +178,8 @@ d) Used for fast and scalable applications.
                                ----> student-mongo.service
       Create a controller file ----> student-mongo.controller
 
+25) Get Data from MongoDB using find() and findById()
+
         
 
 
