@@ -1,4 +1,5 @@
-import { Body, Controller, Get, Param, Patch, Post, Put } from '@nestjs/common';
+/* eslint-disable prettier/prettier */
+import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
 import { StudentMongoService } from './student-mongo.service';
 import { Student } from './student.schema';
 
@@ -30,4 +31,10 @@ export class StudentMongoController {
   async patchStudent(@Param('id') id: string, @Body() data: Partial<Student>) {
     return this.studentMongoService.pathStudent(id, data);
   }
+
+  @Delete(':id')
+  async deleteStudent(@Param('id') id: string){
+    return this.studentMongoService.deleteStudent(id);
+  }
+
 }

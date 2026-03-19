@@ -180,6 +180,8 @@ d) Used for fast and scalable applications.
 
 25) Get Data from MongoDB using find() and findById()
 26) Update MongoDB Data using PUT API and findByIdAndUpdate();
+27) Update MongoDb Data using the PATCH method 
+28) Delete MongoDB Data using Delete API Method
 
         
 
