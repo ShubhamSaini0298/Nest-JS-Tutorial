@@ -179,6 +179,7 @@ d) Used for fast and scalable applications.
       Create a controller file ----> student-mongo.controller
 
 25) Get Data from MongoDB using find() and findById()
+26) Update MongoDB Data using PUT API and findByIdAndUpdate();
 
         
 
