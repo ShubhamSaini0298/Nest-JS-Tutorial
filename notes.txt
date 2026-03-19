@@ -25,7 +25,7 @@ GET, POST, PUT, PATCH, DELETE
 
 11) ========================[Date : 13/03/2026    Friday]==============================
 it create manually not by command
-{#} DTO (Data Transfer Object)
+{#} DTO (Data Transfer Object)   ------> customer
 
 a) An object that carries data between layers (like from client to backend).
 b) Used to define the shape of incoming request data.
@@ -39,7 +39,8 @@ c) Used for both request(DTOs) and response objects.
 
 In which the customer folder is make for DTO implementation
 
-12)=====>>>>>>>>>> CLASS VALIDATOR, CLASS transformer
+12)=====>>>>>>>>>> CLASS VALIDATOR, CLASS transformer    -------> customer ,dto -> class validator
+                                                        
 
 this is bby default make pipe that use in globally our code in main.ts file check it 
 app.useGlobalPipe that term is belong here 
@@ -56,7 +57,7 @@ i.e., /* eslint-disable prettier/prettier */
  Now we install the package , class-validator and class-transformer 
  we use this package in DTo of customer for some decorator and also used globally inside the main.ts file 
 
-13)=========>>>>>>>>> Custom Pipes
+13)=========>>>>>>>>> Custom Pipes   ---------> common , pipe --> class transform
 create custom pipe   nest g pipe common/pipes/uppercase
 
 a) Pipes are used to transform or validate incoming data.
@@ -169,6 +170,8 @@ d) Used for fast and scalable applications.
    npm i @nestjs/config,  npm i @nestjs/mongoose
    app.module.ts
 
+            =====> Date : 19/03/2026 ===== student-mongo
+23) Create and Register Schema with mongoose
 
         
 
