@@ -183,6 +183,31 @@ d) Used for fast and scalable applications.
 27) Update MongoDb Data using the PATCH method 
 28) Delete MongoDB Data using Delete API Method
 
+29) Data Relationship in MongoDB 
+a) Connection between documents in collection.
+b)For make Relation ship in mongoDb we have two technique
+        1) Embedding : Storing related data inside the same document.
+        2) Refrencing : Storing related data in separate documents and linking by IDs.
+
+        RelationShip Types
+        1) One-to-One Relationship
+        2) One-to-Many Relationship
+        3) Many-to-Many Relationship
+
+    Pros of Embedding
+        Fast data retrieval (Single document).
+        Simple for small related data.
+
+    Cons of Embedding
+        Document size grows big.
+        Hard to update depply nested data.
+
+    Pros of Refrencing
+        Keeps documents small.
+        Easier to update and manage large data.
+    Cons of Refrencing
+        Requires extra queries or joins (populate() in Mongoose).
+        Slightly slower reads.
         
 
 
