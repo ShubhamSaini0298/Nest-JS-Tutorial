@@ -173,6 +173,11 @@ d) Used for fast and scalable applications.
             =====> Date : 19/03/2026 ===== student-mongo
 23) Create and Register Schema with mongoose
 
+24) Insert Data into Mongoose
+      Create a service file in ----> student.mongo 
+                               ----> student-mongo.service
+      Create a controller file ----> student-mongo.controller
+
         
 
 
