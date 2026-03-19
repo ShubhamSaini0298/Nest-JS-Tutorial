@@ -208,6 +208,8 @@ b)For make Relation ship in mongoDb we have two technique
     Cons of Refrencing
         Requires extra queries or joins (populate() in Mongoose).
         Slightly slower reads.
+
+30) One-to-One Relationship using Embedding   ====> user-mongo-Relationship
         
 
 
