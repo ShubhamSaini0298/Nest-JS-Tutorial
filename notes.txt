@@ -218,7 +218,17 @@ b)For make Relation ship in mongoDb we have two technique
 
 34) Many-to-Many Relationship using Refrencing ====> projevct-mongo-realtionship-many-to-many-refrencing.
      For Many to Many Relationship we dont use the embedding only on we use the Refrencing.   
+35) PostgreSQL and TypeORM Explained.
+    a) It support both SQL and NoSQL
+    b) It's relational like MySQL (tables, schemas, joins)
+    c)But also support NOSQL features like : JSON & JSONB columns, Full text search, Arrays and custom data Types
+      so, it gives you the power of both SQL and NoSql in one system.
 
+      TypeORM
+a) TypeORM is an Object Relational Mapper for TypeScript.
+b) It connects your NestJS app with PostgreSQL using OOP-style code.
+c) You define tables as classes using decorators like @Entity, @Column, etc.
+d) It makes database queries easier, readable, and type-safe.
 
 
 
