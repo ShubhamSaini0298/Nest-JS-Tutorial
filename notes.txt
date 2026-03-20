@@ -236,6 +236,7 @@ d) It makes database queries easier, readable, and type-safe.
 
 37) Insert Data Into Supabase PostgreSQL | TypeORM  =====> employee-supabase-postgre-SQL
 38) Fetch Data from Supabase PostgreSQL | GetAPI with TypeORM  ====>  employee-supabase-postgre-SQL
+39) Update Data from Supabase PostgreSQL | PUTAPI with TypeORM  ====> employee-supabase-postgre-SQL
 
 
 
