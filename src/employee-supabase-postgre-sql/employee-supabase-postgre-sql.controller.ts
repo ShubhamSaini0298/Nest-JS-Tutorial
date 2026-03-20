@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
 import { EmployeeSupabasePostgreSqlService } from './employee-supabase-postgre-sql.service';
 import { Employee } from './employees.entity';
 
@@ -15,6 +15,14 @@ export class EmployeeSupabasePostgreSqlController {
     @Get()
     async findAll(): Promise<Employee[]>{
         return this.employeeService.findAll();
+    }
+
+    @Get('search')
+    async searchEmployees(
+        @Query('name') name?:string,
+        @Query('department') department?: string
+        ):Promise<Employee[]>{ 
+        return this.employeeService.search({name, department});
     }
 
      @Get(':id')

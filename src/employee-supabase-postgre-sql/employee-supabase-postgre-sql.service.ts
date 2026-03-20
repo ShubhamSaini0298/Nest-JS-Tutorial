@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable prettier/prettier */
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Employee } from './employees.entity';
 import { Repository } from 'typeorm';
+import { filter } from 'rxjs';
 
 @Injectable()
 export class EmployeeSupabasePostgreSqlService {
@@ -42,5 +44,17 @@ export class EmployeeSupabasePostgreSqlService {
           throw new NotFoundException(`Employee with id ${id} not found`);
          }  
          return {message: `Employee with id ${id} deleted successfully`};
+    }
+
+    async search(filters: {name?:string; department?:string}): Promise<Employee[]>{
+        const query = this.employeeRepository.createQueryBuilder('employee');
+        if(filters.name){
+            query.andWhere('employee.name ILIKE :name',{name: `%${filters.name}%`})
+        }
+
+        if(filters.department){
+            query.andWhere('employee.department  = :department',{department: filters.department})
+        }
+        return query.getMany();
     }
 }

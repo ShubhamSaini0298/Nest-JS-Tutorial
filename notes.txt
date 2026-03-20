@@ -238,6 +238,8 @@ d) It makes database queries easier, readable, and type-safe.
 38) Fetch Data from Supabase PostgreSQL | GetAPI with TypeORM  ====>  employee-supabase-postgre-SQL
 39) Update Data from Supabase PostgreSQL | PUTAPI with TypeORM  ====> employee-supabase-postgre-SQL
 40) Delete Data from Supabase PostgreSQL Database   =====> employee-supabase-postgre-SQL
+41) Filter & Search Data Using @Query() | Supabase =====> employee-supabase-postgre-SQL 
+       http://localhost:3000/employee-supabase-postgre-sql/search?name=shubham&department=engineering
 
 
 
