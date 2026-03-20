@@ -213,7 +213,11 @@ b)For make Relation ship in mongoDb we have two technique
 31) One-to-One relationship using Refrencing  ====  employee-mongo-relationship-onetoone-refrencing
 32) One-to-Many realtionShip using Embedded in MongoDB   =====> product-mongo-realtionship-one-to-many-embedding
 33) One-to-Many relationship using refrencing in MongoDB =====> library-mongo-realtionship-one-to-many-refrencing
-        
+
+            ==========> Date : 20/03/2026  Friday 
+
+34) Many-to-Many Relationship using Refrencing ====> projevct-mongo-realtionship-many-to-many-refrencing.
+     For Many to Many Relationship we dont use the embedding only on we use the Refrencing.   
 
 
 
