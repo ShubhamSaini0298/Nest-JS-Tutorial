@@ -27,6 +27,7 @@ import { LibraryMongoRelationshipOneToManyRefrencingModule } from './library-mon
 import { ProjectMongoRelationshipManyToManyRefrencingModule } from './project-mongo-relationship-many-to-many-refrencing/project-mongo-relationship-many-to-many-refrencing.module';
 import { UserSupbasePostgreSqlModule } from './user-supbase-postgre-sql/user-supbase-postgre-sql.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { EmployeeSupabasePostgreSqlModule } from './employee-supabase-postgre-sql/employee-supabase-postgre-sql.module';
 
 
 @Module({
@@ -43,7 +44,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     inject: [ConfigService],
   }), 
     StudentMongoModule, UserMongoRelationshipModule, EmployeeMongoRelationshipOnetooneRefrencingModule, ProductMongoRelationshipOneToManyEmbeddingModule, 
-    LibraryMongoRelationshipOneToManyRefrencingModule, ProjectMongoRelationshipManyToManyRefrencingModule, UserSupbasePostgreSqlModule],
+    LibraryMongoRelationshipOneToManyRefrencingModule, ProjectMongoRelationshipManyToManyRefrencingModule, UserSupbasePostgreSqlModule, EmployeeSupabasePostgreSqlModule],
   controllers: [AppController, UserController, ProductController, MynameController, UserRolesController, ExceptionController, DatabaseController, EvController],
   providers: [AppService, ProductService, DatabaseService, EvService],
 })

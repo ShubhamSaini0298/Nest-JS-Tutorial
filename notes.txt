@@ -234,6 +234,8 @@ d) It makes database queries easier, readable, and type-safe.
     Copy the url IPv4 from Subase of PostgreSQL
     install the package @nestjs/config, @nestjs/typeorm, typeorm, pg
 
+37) Insert Data Into Supabase PostgreSQL | TypeORM  =====> employee-supabase-postgre-SQL
+38) 
 
 
 
