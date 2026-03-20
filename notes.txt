@@ -230,6 +230,10 @@ b) It connects your NestJS app with PostgreSQL using OOP-style code.
 c) You define tables as classes using decorators like @Entity, @Column, etc.
 d) It makes database queries easier, readable, and type-safe.
 
+36) Connect Supabase PostgreSQL with Nest JS ====> user-supbase-postgreSql
+    Copy the url IPv4 from Subase of PostgreSQL
+    install the package @nestjs/config, @nestjs/typeorm, typeorm, pg
+
 
 
 

@@ -15,7 +15,7 @@ import { ExceptionController } from './exception/exception.controller';
 import { LoggerMiddleware } from './middleware/logger/logger.middleware';
 import { DatabaseService } from './database/database.service';
 import { DatabaseController } from './database/database.controller';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { EvService } from './ev/ev.service';
 import { EvController } from './ev/ev.controller';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -25,10 +25,25 @@ import { EmployeeMongoRelationshipOnetooneRefrencingModule } from './employee-mo
 import { ProductMongoRelationshipOneToManyEmbeddingModule } from './product-mongo-relationship-one-to-many-embedding/product-mongo-relationship-one-to-many-embedding.module';
 import { LibraryMongoRelationshipOneToManyRefrencingModule } from './library-mongo-relationship-one-to-many-refrencing/library-mongo-relationship-one-to-many-refrencing.module';
 import { ProjectMongoRelationshipManyToManyRefrencingModule } from './project-mongo-relationship-many-to-many-refrencing/project-mongo-relationship-many-to-many-refrencing.module';
+import { UserSupbasePostgreSqlModule } from './user-supbase-postgre-sql/user-supbase-postgre-sql.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 
 @Module({
-  imports: [EmployeeModule, CategoryModule, StudentModule, CustomerModule, ConfigModule.forRoot({ isGlobal: true }),MongooseModule.forRoot(process.env.MONGO_URL!), StudentMongoModule, UserMongoRelationshipModule, EmployeeMongoRelationshipOnetooneRefrencingModule, ProductMongoRelationshipOneToManyEmbeddingModule, LibraryMongoRelationshipOneToManyRefrencingModule, ProjectMongoRelationshipManyToManyRefrencingModule],
+  imports: [EmployeeModule, CategoryModule, StudentModule, CustomerModule, ConfigModule.forRoot({ isGlobal: true }),MongooseModule.forRoot(process.env.MONGO_URL!),
+    TypeOrmModule.forRootAsync({
+    imports: [ConfigModule],
+    useFactory: (config: ConfigService) => ({
+      type: 'postgres',
+      url: config.get<string>('DATABASE_URL'),
+      autoLoadEntities: true,
+      synchronize: true,
+      ssl: { rejectUnauthorized: false },
+    }),
+    inject: [ConfigService],
+  }), 
+    StudentMongoModule, UserMongoRelationshipModule, EmployeeMongoRelationshipOnetooneRefrencingModule, ProductMongoRelationshipOneToManyEmbeddingModule, 
+    LibraryMongoRelationshipOneToManyRefrencingModule, ProjectMongoRelationshipManyToManyRefrencingModule, UserSupbasePostgreSqlModule],
   controllers: [AppController, UserController, ProductController, MynameController, UserRolesController, ExceptionController, DatabaseController, EvController],
   providers: [AppService, ProductService, DatabaseService, EvService],
 })
