@@ -35,4 +35,12 @@ export class EmployeeSupabasePostgreSqlService {
         Object.assign(employee, updateData);
         return this.employeeRepository.save(employee)
     }
+
+    async delete(id:number): Promise<{message: string}>{
+       const result =  await this.employeeRepository.delete(id);
+         if(result.affected === 0){
+          throw new NotFoundException(`Employee with id ${id} not found`);
+         }  
+         return {message: `Employee with id ${id} deleted successfully`};
+    }
 }
