@@ -280,7 +280,57 @@ d) It makes database queries easier, readable, and type-safe.
     c) With GraphQL, you ask only for what you need. No extra data. 
     d) GraphQl is faster, flexible, and efficient. 
 
+46) GraphQl CRUD
+  npm i @nestjs/apollo @nestjs/graphql apollo-server-express class-transformer class-validator graphql
+ 
+ apollo is the server of graphql
+ nest g resolver book-crud-graphql/resolvers/book --flat
+resolver is the controller of graphql
 
+# mutation{
+#   createBook(input :{
+#     title:"NestJS",
+#     author:"Shubham"
+#   }){
+#     _id,
+#     title,
+#     author
+#   }
+# }
+
+# query{
+#   getAllBooks{
+#     _id,
+#     title,
+#     author
+#   }
+# }
+
+# query{
+#   getBook(id:"69c12e308861c988bab982f4"){
+#     _id,
+#     title,
+#     author 
+#   }
+# }
+
+# mutation{
+#   updateBook(input:{
+#     id:"69c12e308861c988bab982f4",
+#     title: "Nest JS",
+#     author: "Akhil"
+#   }){
+#     _id,
+#     title,
+#     author
+#   }
+# }
+
+mutation {
+  deleteBook(id: "69c12e308861c988bab982f4")
+}
+
+by this way we call the api on browser 
 
 
 

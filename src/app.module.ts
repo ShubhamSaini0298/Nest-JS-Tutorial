@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable prettier/prettier */
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { AppController } from './app.controller';
@@ -29,10 +31,20 @@ import { UserSupbasePostgreSqlModule } from './user-supbase-postgre-sql/user-sup
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { EmployeeSupabasePostgreSqlModule } from './employee-supabase-postgre-sql/employee-supabase-postgre-sql.module';
 import { AuthJwtModule } from './auth-jwt/auth-jwt.module';
+import { BookCrudGraphqlModule } from './book-crud-graphql/book-crud-graphql.module';
+import { GraphQLModule } from '@nestjs/graphql';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { join } from 'path';
 
 
 @Module({
   imports: [EmployeeModule, CategoryModule, StudentModule, CustomerModule, ConfigModule.forRoot({ isGlobal: true }),MongooseModule.forRoot(process.env.MONGO_URL!),
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      sortSchema: true,
+      playground: true,
+    }),
     TypeOrmModule.forRootAsync({
     imports: [ConfigModule],
     useFactory: (config: ConfigService) => ({
@@ -45,7 +57,7 @@ import { AuthJwtModule } from './auth-jwt/auth-jwt.module';
     inject: [ConfigService],
   }), 
     StudentMongoModule, UserMongoRelationshipModule, EmployeeMongoRelationshipOnetooneRefrencingModule, ProductMongoRelationshipOneToManyEmbeddingModule, 
-    LibraryMongoRelationshipOneToManyRefrencingModule, ProjectMongoRelationshipManyToManyRefrencingModule, UserSupbasePostgreSqlModule, EmployeeSupabasePostgreSqlModule, AuthJwtModule],
+    LibraryMongoRelationshipOneToManyRefrencingModule, ProjectMongoRelationshipManyToManyRefrencingModule, UserSupbasePostgreSqlModule, EmployeeSupabasePostgreSqlModule, AuthJwtModule, BookCrudGraphqlModule],
   controllers: [AppController, UserController, ProductController, MynameController, UserRolesController, ExceptionController, DatabaseController, EvController],
   providers: [AppService, ProductService, DatabaseService, EvService],
 })
