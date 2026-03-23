@@ -330,7 +330,29 @@ mutation {
   deleteBook(id: "69c12e308861c988bab982f4")
 }
 
-by this way we call the api on browser 
+by this way we call the api on browser
+
+47)   Prisma ORM & Neon DB Explained
+        ---Prisma---
+    a) Prisma is a modern ORM (Object Relational Mapper).
+    b) It connects your backend code with your database in a structured and type-safe way.
+    c) Think of it as a translator between your app and the database.
+
+      --- Why we use Prisma---
+    a) Auto-generates types, so fewer bugs.
+    b) Greate developer experience with auto-completion.
+    c) Built-in migration system (no manual DB changes).
+    d) Works perfectly with TypeScript and Nest JS.
+
+    ------What is Neon DB ----
+    a) Neon is a free, serverless PostgreSQL database in the cloud.
+    b) Ypu don't need to install PostgreSQL locally.
+    c) Just sign up, get your DB URL, and you're ready to go.
+
+    --Why Prisma + Neon = Perfect Combo
+    a) Both are fast, scalable, and easy to set up.
+    b) Prisma integrates smoothly with Neon just paste the DB URL.
+    c) No local setup, no hassle, perfect for brginners and pros.
 
 
 
