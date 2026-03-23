@@ -28,6 +28,7 @@ import { ProjectMongoRelationshipManyToManyRefrencingModule } from './project-mo
 import { UserSupbasePostgreSqlModule } from './user-supbase-postgre-sql/user-supbase-postgre-sql.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { EmployeeSupabasePostgreSqlModule } from './employee-supabase-postgre-sql/employee-supabase-postgre-sql.module';
+import { AuthJwtModule } from './auth-jwt/auth-jwt.module';
 
 
 @Module({
@@ -44,7 +45,7 @@ import { EmployeeSupabasePostgreSqlModule } from './employee-supabase-postgre-sq
     inject: [ConfigService],
   }), 
     StudentMongoModule, UserMongoRelationshipModule, EmployeeMongoRelationshipOnetooneRefrencingModule, ProductMongoRelationshipOneToManyEmbeddingModule, 
-    LibraryMongoRelationshipOneToManyRefrencingModule, ProjectMongoRelationshipManyToManyRefrencingModule, UserSupbasePostgreSqlModule, EmployeeSupabasePostgreSqlModule],
+    LibraryMongoRelationshipOneToManyRefrencingModule, ProjectMongoRelationshipManyToManyRefrencingModule, UserSupbasePostgreSqlModule, EmployeeSupabasePostgreSqlModule, AuthJwtModule],
   controllers: [AppController, UserController, ProductController, MynameController, UserRolesController, ExceptionController, DatabaseController, EvController],
   providers: [AppService, ProductService, DatabaseService, EvService],
 })

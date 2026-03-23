@@ -260,6 +260,13 @@ d) It makes database queries easier, readable, and type-safe.
         in that way we implement the jwt functionality through supabase 
         app this on ===> employee-supabase-postgre-sql
 
+44) JWT Authentication with MongoDB Passport  -====> auth-jwt
+    install -> npm i @nestjs/jwt passport-jwt @nestjs/passport passport  bcrypt @types/bcrypt
+    nest g module auth-jwt 
+    nest g controller auth-jwt
+    nest g service auth-jwt
+    nest g class auth-jwt/user.schmea --flat   
+
 
 
 
