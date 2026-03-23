@@ -267,6 +267,19 @@ d) It makes database queries easier, readable, and type-safe.
     nest g service auth-jwt
     nest g class auth-jwt/user.schmea --flat   
 
+45) What is GraphQl? GraphQl v/s RestAPI
+    a) GraphQl is a query langugae for APIs.
+    b) Developed by facebook in 2012, released publicaly in 2015.
+    c) It allows the client to request excatly the data it needs, nothing more or less.
+    d) GraphQl solves problems of over-fetching and under-fetching in REST APIs.
+    e) Works on a single endpoint, not multiple like REST.
+
+    --- Why use GraphQl over REST APIs---
+    a) Rest APIs can lead to over-fetching (too much data) or under-fetching (too little data).
+    b) Example: Geeting a user profile might return posts, friends, and settings, even if you just need the same.
+    c) With GraphQL, you ask only for what you need. No extra data. 
+    d) GraphQl is faster, flexible, and efficient. 
+
 
 
 
