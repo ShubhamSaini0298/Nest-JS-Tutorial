@@ -241,5 +241,26 @@ d) It makes database queries easier, readable, and type-safe.
 41) Filter & Search Data Using @Query() | Supabase =====> employee-supabase-postgre-SQL 
        http://localhost:3000/employee-supabase-postgre-sql/search?name=shubham&department=engineering
 
+42) JWT Token Explained | Authentication & Authorization
+        Authentication
+  a) Verifying who the user is 
+  b) Example : Logging into your Gmail using email & password.
+  c) It checks if you are a real & registered user.
+        Authorization
+  a) Decides what the authenticated user is allowed to do.
+  b) Example: A normal Gmail user cant access Admin Panel.
+  c) It checks your permissions after login.
+    JWT 
+
+       =======> Date : 23/03/2026 =====>
+       First of all in Supabase got o project Settings -> JWT Keys -> Legacy JWT key -> clikc on Reveal copy the code and paste in .env file 
+       in root app.module.ts make COnfigModule.forRoot({ is Global: true})
+43)     npm i jsonwebtoken
+        nest g guard auth/supabase-auth    -----> auth/supabase-auth
+        in that way we implement the jwt functionality through supabase 
+        app this on ===> employee-supabase-postgre-sql
+
+
+
 
 

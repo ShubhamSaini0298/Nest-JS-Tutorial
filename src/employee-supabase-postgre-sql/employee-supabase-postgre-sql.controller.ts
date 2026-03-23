@@ -1,7 +1,8 @@
 /* eslint-disable prettier/prettier */
-import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query, UseGuards } from '@nestjs/common';
 import { EmployeeSupabasePostgreSqlService } from './employee-supabase-postgre-sql.service';
 import { Employee } from './employees.entity';
+import { SupabaseAuthGuard } from 'src/auth/supabase-auth/supabase-auth.guard';
 
 @Controller('employee-supabase-postgre-sql')
 export class EmployeeSupabasePostgreSqlController {
@@ -12,6 +13,7 @@ export class EmployeeSupabasePostgreSqlController {
         return this.employeeService.create(body); 
     }
 
+    @UseGuards(SupabaseAuthGuard)
     @Get()
     async findAll(): Promise<Employee[]>{
         return this.employeeService.findAll();
