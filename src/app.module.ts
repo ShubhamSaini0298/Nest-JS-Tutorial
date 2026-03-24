@@ -35,13 +35,21 @@ import { BookCrudGraphqlModule } from './book-crud-graphql/book-crud-graphql.mod
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'path';
+import { PrismaGraphqlNeonDbModule } from './prisma-graphql-neon-db/prisma-graphql-neon-db.module';
+import { BookPrismaGraphqpNeondbModule } from './book-prisma-graphql-neondb/book-prisma-graphql-neondb.module';
 
 
 @Module({
   imports: [EmployeeModule, CategoryModule, StudentModule, CustomerModule, ConfigModule.forRoot({ isGlobal: true }),MongooseModule.forRoot(process.env.MONGO_URL!),
+    // GraphQLModule.forRoot<ApolloDriverConfig>({
+    //   driver: ApolloDriver,
+    //   autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+    //   sortSchema: true,
+    //   playground: true,
+    // }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      autoSchemaFile: join(process.cwd(), 'src/schema2.gql'),
       sortSchema: true,
       playground: true,
     }),
@@ -57,7 +65,7 @@ import { join } from 'path';
     inject: [ConfigService],
   }), 
     StudentMongoModule, UserMongoRelationshipModule, EmployeeMongoRelationshipOnetooneRefrencingModule, ProductMongoRelationshipOneToManyEmbeddingModule, 
-    LibraryMongoRelationshipOneToManyRefrencingModule, ProjectMongoRelationshipManyToManyRefrencingModule, UserSupbasePostgreSqlModule, EmployeeSupabasePostgreSqlModule, AuthJwtModule, BookCrudGraphqlModule],
+    LibraryMongoRelationshipOneToManyRefrencingModule, ProjectMongoRelationshipManyToManyRefrencingModule, UserSupbasePostgreSqlModule, EmployeeSupabasePostgreSqlModule, AuthJwtModule, BookCrudGraphqlModule, PrismaGraphqlNeonDbModule, BookPrismaGraphqpNeondbModule],
   controllers: [AppController, UserController, ProductController, MynameController, UserRolesController, ExceptionController, DatabaseController, EvController],
   providers: [AppService, ProductService, DatabaseService, EvService],
 })

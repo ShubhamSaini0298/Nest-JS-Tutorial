@@ -280,7 +280,7 @@ d) It makes database queries easier, readable, and type-safe.
     c) With GraphQL, you ask only for what you need. No extra data. 
     d) GraphQl is faster, flexible, and efficient. 
 
-46) GraphQl CRUD
+46) GraphQl CRUD  ====> book-crud-graphql
   npm i @nestjs/apollo @nestjs/graphql apollo-server-express class-transformer class-validator graphql
  
  apollo is the server of graphql
@@ -353,6 +353,23 @@ by this way we call the api on browser
     a) Both are fast, scalable, and easy to set up.
     b) Prisma integrates smoothly with Neon just paste the DB URL.
     c) No local setup, no hassle, perfect for brginners and pros.
+
+48) Build CRUD APP with GraphQL, Prisma & NeonDB  =====> book-prisma-graphql-neondb, prisma-graphql-neon-db
+    npm i @nestjs/graphql @nestjs/apollo graphql apollo-server-express 
+    npm i prisma --save-dev
+    npm i @prisma /client
+    npx prisma init
+
+    npx prisma db push -> to connect neonDB that url have in .env DATABASE_URL
+
+    npx prisma generate -> it generate the client in node_modules for prisma
+    =====> prisma-graphql-neon-db
+    -----> book-prisma-graphql-neondb
+
+    When i execute the command npm run start:dev it give some error like exports not defined in dist/generated/
+    prisma/client.js
+
+49)
 
 
 
