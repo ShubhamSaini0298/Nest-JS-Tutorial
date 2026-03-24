@@ -369,7 +369,38 @@ by this way we call the api on browser
     When i execute the command npm run start:dev it give some error like exports not defined in dist/generated/
     prisma/client.js
 
-49)
+49)  Implement Rate Limiting  Usingf throttler
+      nestjs/throttler
+
+      npm i @nestjs/throttler
+
+      import {APP_GUARD} from "@nestjs/core";
+
+        in app.module.ts we import this in iimports
+        imports:[
+            ThrottlerModule.forRoot({
+                throttlers:[
+                    {
+                        name:'default',
+                        ttl: seconds(60),
+                        limit: 3
+                    }
+                ],
+                errorMessage: "Too many requests! Please wait a minute and try again!",
+            })
+        ],
+        controllers: [AppController],
+        providers:[AppService, {
+            provide: APP_GUARD,
+            useClass: ThrottlerGuard
+        }]
+
+        now in controller 
+        @Get()
+        @Throttle({default: {limit:3, ttl: 60000}})
+        getHello(): string{
+            return "This is a rate limit route!"
+        }
 
 
 
